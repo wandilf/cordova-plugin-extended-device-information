@@ -23,8 +23,12 @@ function ExtendedDevice() {
     
     channel.onCordovaReady.subscribe(function () {
         if(cordova.platformId === 'android') {
-            me.getInfo(function(info){
+                        console.log(navigator);
+                if (navigator) {
              navigator.hide();
+                }
+            me.getInfo(function(info){
+    
                 me.memory = info.memory || 'unknown';
                 me.cpumhz = info.cpumhz || 'unknown';
                 me.totalstorage = info.totalstorage || 'unknown';
@@ -34,7 +38,9 @@ function ExtendedDevice() {
                 utils.alert('[ERROR] Error initializing Cordova: ' + e);
             });
         } else {
-              navigator.hide();
+                       if (navigator) {
+             navigator.hide();
+                }
             channel.onCordovaInformationReady.fire();
         }
     });
