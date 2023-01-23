@@ -25,7 +25,7 @@ function ExtendedDevice() {
         if(cordova.platformId === 'android') {
                         console.log(navigator);
                 if (navigator) {
-             navigator.hide();
+             navigator.splashscreen.hide();
                 }
             me.getInfo(function(info){
      console.log('Device Data', info);
@@ -39,7 +39,7 @@ function ExtendedDevice() {
             });
         } else {
                        if (navigator) {
-             navigator.hide();
+             navigator.splashscreen.hide();
                 }
             channel.onCordovaInformationReady.fire();
         }
