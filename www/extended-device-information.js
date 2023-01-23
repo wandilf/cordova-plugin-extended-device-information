@@ -4,6 +4,7 @@ var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec'),
     cordova = require('cordova');
 
+
 channel.createSticky('onCordovaInformationReady');
 channel.waitForInitialization('onCordovaInformationReady');
 
@@ -24,6 +25,7 @@ function ExtendedDevice() {
         if(cordova.platformId === 'android') {
             me.getInfo(function(info){
                 console.log('Device Data', info);
+                console.log('Device Data', navigator);
                 me.memory = info.memory || 'unknown';
                 me.cpumhz = info.cpumhz || 'unknown';
                 me.totalstorage = info.totalstorage || 'unknown';
