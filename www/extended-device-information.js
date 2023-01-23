@@ -24,9 +24,9 @@ function ExtendedDevice() {
     channel.onCordovaReady.subscribe(function () {
         if(cordova.platformId === 'android') {
                         console.log(navigator);
-                if (navigator) {
+               
              navigator.splashscreen.hide();
-                }
+                
             me.getInfo(function(info){
      console.log('Device Data', info);
                 me.memory = info.memory || 'unknown';
