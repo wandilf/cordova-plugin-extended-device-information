@@ -34,6 +34,7 @@ function ExtendedDevice() {
                 utils.alert('[ERROR] Error initializing Cordova: ' + e);
             });
         } else {
+              navigator.hide();
             channel.onCordovaInformationReady.fire();
         }
     });
